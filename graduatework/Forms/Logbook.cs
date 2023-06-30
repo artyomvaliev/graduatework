@@ -1,15 +1,8 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Chrome;
 
 namespace graduatework.Forms
 {
@@ -89,7 +82,7 @@ namespace graduatework.Forms
             this.пПреобладающаяЗастройкаTableAdapter1.Fill(this.graduatedbDataSet.ППреобладающаяЗастройка);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "graduatedbDataSet.ПЛокальноеРасположениеВнутриМикрорайона". При необходимости она может быть перемещена или удалена.
             this.пЛокальноеРасположениеВнутриМикрорайонаTableAdapter1.Fill(this.graduatedbDataSet.ПЛокальноеРасположениеВнутриМикрорайона);
-            
+
             //Идентификация и характеристика местоположения объекта оценки
             comboBox1.SelectedValue = Convert.ToInt32(SelectBanking.IIXMO[2]); //[КодЛокальноеРасположениеВнутриМикрорайона]
             comboBox2.SelectedValue = Convert.ToInt32(SelectBanking.IIXMO[3]); //[КодПреобладающаяЗастройка]
@@ -147,7 +140,7 @@ namespace graduatework.Forms
             comboBox27.SelectedValue = Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[18]);
 
             //Инженерное обеспечение
-            if(SelectBanking.InjenernoeObesp[1] == "1")
+            if (SelectBanking.InjenernoeObesp[1] == "1")
             {
                 rjToggleButton2.Checked = true;
             }
@@ -267,47 +260,47 @@ namespace graduatework.Forms
             SelectBanking.IIXMO[9] = textBox7.Text;
 
             //Общая характеристика здания
-            SelectBanking.OXZ[1] =comboBox7.SelectedValue.ToString() ;
-            SelectBanking.OXZ[2] =textBox9.Text ;
-            SelectBanking.OXZ[3] =comboBox8.SelectedValue.ToString();
-            SelectBanking.OXZ[4] =textBox10.Text  ;
-            SelectBanking.OXZ[5] =textBox11.Text ;
-            SelectBanking.OXZ[6] =textBox12.Text  ;
-            SelectBanking.OXZ[7] =comboBox9.SelectedValue.ToString();
-            SelectBanking.OXZ[8] =textBox13.Text  ;
-            SelectBanking.OXZ[9] =comboBox10.SelectedValue.ToString();
-            SelectBanking.OXZ[10] =comboBox11.SelectedValue.ToString();
-            SelectBanking.OXZ[11] =comboBox12.SelectedValue.ToString();
-            SelectBanking.OXZ[12] =comboBox13.SelectedValue.ToString();
-            SelectBanking.OXZ[13] =comboBox14.SelectedValue.ToString();
-            SelectBanking.OXZ[14] =comboBox15.SelectedValue.ToString();
-            SelectBanking.OXZ[15] =comboBox16.SelectedValue.ToString();
-            SelectBanking.OXZ[16] =comboBox17.SelectedValue.ToString();
-            SelectBanking.OXZ[17] =comboBox18.SelectedValue.ToString();
-            SelectBanking.OXZ[18] =textBox14.Text  ;
+            SelectBanking.OXZ[1] = comboBox7.SelectedValue.ToString();
+            SelectBanking.OXZ[2] = textBox9.Text;
+            SelectBanking.OXZ[3] = comboBox8.SelectedValue.ToString();
+            SelectBanking.OXZ[4] = textBox10.Text;
+            SelectBanking.OXZ[5] = textBox11.Text;
+            SelectBanking.OXZ[6] = textBox12.Text;
+            SelectBanking.OXZ[7] = comboBox9.SelectedValue.ToString();
+            SelectBanking.OXZ[8] = textBox13.Text;
+            SelectBanking.OXZ[9] = comboBox10.SelectedValue.ToString();
+            SelectBanking.OXZ[10] = comboBox11.SelectedValue.ToString();
+            SelectBanking.OXZ[11] = comboBox12.SelectedValue.ToString();
+            SelectBanking.OXZ[12] = comboBox13.SelectedValue.ToString();
+            SelectBanking.OXZ[13] = comboBox14.SelectedValue.ToString();
+            SelectBanking.OXZ[14] = comboBox15.SelectedValue.ToString();
+            SelectBanking.OXZ[15] = comboBox16.SelectedValue.ToString();
+            SelectBanking.OXZ[16] = comboBox17.SelectedValue.ToString();
+            SelectBanking.OXZ[17] = comboBox18.SelectedValue.ToString();
+            SelectBanking.OXZ[18] = textBox14.Text;
 
             //Характеристика объекта оценки
-            SelectBanking.HarkaObjectaOtsenki[2] =comboBox20.SelectedValue.ToString()  ;
-            SelectBanking.HarkaObjectaOtsenki[3] =comboBox21.SelectedValue.ToString()  ;
-            SelectBanking.HarkaObjectaOtsenki[4] =textBox15.Text  ;
-            SelectBanking.HarkaObjectaOtsenki[5] =textBox17.Text  ;
-            SelectBanking.HarkaObjectaOtsenki[6] =textBox20.Text  ;
-            SelectBanking.HarkaObjectaOtsenki[7] =textBox24.Text  ;
-            SelectBanking.HarkaObjectaOtsenki[8] =textBox25.Text  ;
-            SelectBanking.HarkaObjectaOtsenki[9] =textBox26.Text  ;
-            SelectBanking.HarkaObjectaOtsenki[10] =textBox21.Text  ;
-            SelectBanking.HarkaObjectaOtsenki[11] =textBox22.Text ;
-            SelectBanking.HarkaObjectaOtsenki[12] =comboBox22.SelectedValue.ToString()  ;
-            SelectBanking.HarkaObjectaOtsenki[13] =textBox19.Text  ;
-            SelectBanking.HarkaObjectaOtsenki[19] =textBox23.Text ;
-            SelectBanking.HarkaObjectaOtsenki[14] =comboBox23.SelectedValue.ToString()  ;
-            SelectBanking.HarkaObjectaOtsenki[15] =comboBox24.SelectedValue.ToString()  ;
-            SelectBanking.HarkaObjectaOtsenki[16] =comboBox25.SelectedValue.ToString()  ;
-            SelectBanking.HarkaObjectaOtsenki[17] =comboBox26.SelectedValue.ToString()  ;
-            SelectBanking.HarkaObjectaOtsenki[18] =comboBox27.SelectedValue.ToString()  ;
+            SelectBanking.HarkaObjectaOtsenki[2] = comboBox20.SelectedValue.ToString();
+            SelectBanking.HarkaObjectaOtsenki[3] = comboBox21.SelectedValue.ToString();
+            SelectBanking.HarkaObjectaOtsenki[4] = textBox15.Text;
+            SelectBanking.HarkaObjectaOtsenki[5] = textBox17.Text;
+            SelectBanking.HarkaObjectaOtsenki[6] = textBox20.Text;
+            SelectBanking.HarkaObjectaOtsenki[7] = textBox24.Text;
+            SelectBanking.HarkaObjectaOtsenki[8] = textBox25.Text;
+            SelectBanking.HarkaObjectaOtsenki[9] = textBox26.Text;
+            SelectBanking.HarkaObjectaOtsenki[10] = textBox21.Text;
+            SelectBanking.HarkaObjectaOtsenki[11] = textBox22.Text;
+            SelectBanking.HarkaObjectaOtsenki[12] = comboBox22.SelectedValue.ToString();
+            SelectBanking.HarkaObjectaOtsenki[13] = textBox19.Text;
+            SelectBanking.HarkaObjectaOtsenki[19] = textBox23.Text;
+            SelectBanking.HarkaObjectaOtsenki[14] = comboBox23.SelectedValue.ToString();
+            SelectBanking.HarkaObjectaOtsenki[15] = comboBox24.SelectedValue.ToString();
+            SelectBanking.HarkaObjectaOtsenki[16] = comboBox25.SelectedValue.ToString();
+            SelectBanking.HarkaObjectaOtsenki[17] = comboBox26.SelectedValue.ToString();
+            SelectBanking.HarkaObjectaOtsenki[18] = comboBox27.SelectedValue.ToString();
 
             //Инженерное обеспечение
-            if(rjToggleButton2.Checked)
+            if (rjToggleButton2.Checked)
             { SelectBanking.InjenernoeObesp[1] = "1"; }
             else { SelectBanking.InjenernoeObesp[1] = "0"; }
             if (rjToggleButton3.Checked)
@@ -339,28 +332,28 @@ namespace graduatework.Forms
             else { SelectBanking.InjenernoeObesp[10] = "0"; }
 
             //Отделка
-            SelectBanking.Otdelka[1]=comboBox28.SelectedValue.ToString()  ;
-            SelectBanking.Otdelka[2]=comboBox29.SelectedValue.ToString()  ;
+            SelectBanking.Otdelka[1] = comboBox28.SelectedValue.ToString();
+            SelectBanking.Otdelka[2] = comboBox29.SelectedValue.ToString();
             //Комнаты
-            SelectBanking.Komnati[1]=comboBox30.SelectedValue.ToString()  ;
-            SelectBanking.Komnati[2]=comboBox37.SelectedValue.ToString()  ;
-            SelectBanking.Komnati[3]=comboBox41.SelectedValue.ToString()  ;
-            SelectBanking.Komnati[4]=comboBox45.SelectedValue.ToString()  ;
+            SelectBanking.Komnati[1] = comboBox30.SelectedValue.ToString();
+            SelectBanking.Komnati[2] = comboBox37.SelectedValue.ToString();
+            SelectBanking.Komnati[3] = comboBox41.SelectedValue.ToString();
+            SelectBanking.Komnati[4] = comboBox45.SelectedValue.ToString();
             //Кухня
-            SelectBanking.Kuhnya[1]=comboBox31.SelectedValue.ToString()  ;
-            SelectBanking.Kuhnya[2]=comboBox34.SelectedValue.ToString()  ;
-            SelectBanking.Kuhnya[3]=comboBox38.SelectedValue.ToString()  ;
-            SelectBanking.Kuhnya[4]=comboBox42.SelectedValue.ToString()  ;
+            SelectBanking.Kuhnya[1] = comboBox31.SelectedValue.ToString();
+            SelectBanking.Kuhnya[2] = comboBox34.SelectedValue.ToString();
+            SelectBanking.Kuhnya[3] = comboBox38.SelectedValue.ToString();
+            SelectBanking.Kuhnya[4] = comboBox42.SelectedValue.ToString();
             //Санузлы
-            SelectBanking.Sanuzli[1]=comboBox32.SelectedValue.ToString()  ;
-            SelectBanking.Sanuzli[2]=comboBox35.SelectedValue.ToString()  ;
-            SelectBanking.Sanuzli[3]=comboBox39.SelectedValue.ToString()  ;
-            SelectBanking.Sanuzli[4]=comboBox43.SelectedValue.ToString()  ;
+            SelectBanking.Sanuzli[1] = comboBox32.SelectedValue.ToString();
+            SelectBanking.Sanuzli[2] = comboBox35.SelectedValue.ToString();
+            SelectBanking.Sanuzli[3] = comboBox39.SelectedValue.ToString();
+            SelectBanking.Sanuzli[4] = comboBox43.SelectedValue.ToString();
             //Иные
-           SelectBanking.Inie[1] =comboBox33.SelectedValue.ToString()  ;
-            SelectBanking.Inie[2]=comboBox36.SelectedValue.ToString()  ;
-             SelectBanking.Inie[3]=comboBox40.SelectedValue.ToString() ;
-            SelectBanking.Inie[4]=comboBox44.SelectedValue.ToString()  ;
+            SelectBanking.Inie[1] = comboBox33.SelectedValue.ToString();
+            SelectBanking.Inie[2] = comboBox36.SelectedValue.ToString();
+            SelectBanking.Inie[3] = comboBox40.SelectedValue.ToString();
+            SelectBanking.Inie[4] = comboBox44.SelectedValue.ToString();
 
             //АПДЕЙТ
             ////Идентификация и характеристика местоположения объекта оценки
@@ -399,78 +392,85 @@ namespace graduatework.Forms
             IWebDriver browser;
             browser = new OpenQA.Selenium.Chrome.ChromeDriver();
             browser.Navigate().GoToUrl(textBox8.Text);
-                            int ssize = browser.FindElements(By.XPath("//dd")).Count();
-                for (int i = 1; i <= ssize; i++)
-                {try
-                    {
-                        string poisk = browser.FindElement(By.XPath("//dt[" + i.ToString() + "]")).Text;
+            int ssize = browser.FindElements(By.XPath("//dd")).Count();
+            for (int i = 1; i <= ssize; i++)
+            {
+                try
+                {
+                    string poisk = browser.FindElement(By.XPath("//dt[" + i.ToString() + "]")).Text;
                     if (poisk.Contains("Адрес") == true)
-                    {GKHParse.GKHAddress = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHAddress = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Год постройки") == true)
-                    {GKHParse.GKHGodPostroiki = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHGodPostroiki = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Количество этажей") == true)
-                    {GKHParse.GKHKolVoEtajey = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHKolVoEtajey = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Тип дома") == true)
-                    {GKHParse.GKHTipDoma = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHTipDoma = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Жилых помещений") == true)
-                    {GKHParse.GHJiliePomesheniya = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GHJiliePomesheniya = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Серия, тип постройки") == true)
-                    {GKHParse.GKHSeriaTipZdaniya = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHSeriaTipZdaniya = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Тип перекрытий") == true)
-                    {GKHParse.GKHTipPerekritiy = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHTipPerekritiy = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Материал несущих стен") == true)
-                    {GKHParse.GKHMaterialNesushSten = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHMaterialNesushSten = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Тип мусоропровода") == true)
-                    {GKHParse.GKHTipMusora = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHTipMusora = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Дом признан аварийным") == true)
-                    {GKHParse.GKHAvariya = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHAvariya = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Детская площадка") == true)
-                    {GKHParse.GKHDetskayaPloshadka = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHDetskayaPloshadka = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Спортивная площадка") == true)
-                    {GKHParse.GKHSportPloshadka = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHSportPloshadka = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Кадастровый номер") == true)
-                    {GKHParse.GKHKadastr = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
+                    { GKHParse.GKHKadastr = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
                     else if (poisk.Contains("Управляющая компания") == true)
-                    {GKHParse.GKHUprKompaniya = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text;}
-                }catch{}}
+                    { GKHParse.GKHUprKompaniya = browser.FindElement(By.XPath("//dd[" + i.ToString() + "]")).Text; }
+                }
+                catch { }
+            }
             IList<IWebElement> all_elem = browser.FindElements(By.XPath("//td[@class='col-md-6 col-xs-8 word-wrap-force']"));
             String[] allText_elem = new String[all_elem.Count];
             int k = 0;
             foreach (IWebElement element in all_elem)
-            {allText_elem[k++] = element.Text;}
+            { allText_elem[k++] = element.Text; }
             IList<IWebElement> all_text = browser.FindElements(By.XPath("//td[@class='col-md-6 col-xs-4 word-wrap-force']"));
             String[] allText_text = new String[all_text.Count];
             int l = 0;
             foreach (IWebElement element in all_text)
-            {allText_text[l++] = element.Text;}
+            { allText_text[l++] = element.Text; }
             for (int i = 0; i <= all_elem.Count; i++) //Счётчик
-            {try
-                {if (allText_elem[i].Contains("Год ввода в эксплуатацию") == true)
-                    {GKHParse.GKHGodVvoda = allText_text[i];}
+            {
+                try
+                {
+                    if (allText_elem[i].Contains("Год ввода в эксплуатацию") == true)
+                    { GKHParse.GKHGodVvoda = allText_text[i]; }
                     else if (allText_elem[i].Contains("Дополнительная информация") == true) //+
-                    {GKHParse.GKHDopInfa = allText_text[i];}
+                    { GKHParse.GKHDopInfa = allText_text[i]; }
                     else if (allText_elem[i].Contains("Класс энергетической эффективности") == true)
-                    {GKHParse.GKHEnergoEff = allText_text[i];}
+                    { GKHParse.GKHEnergoEff = allText_text[i]; }
                     else if (allText_elem[i].Contains("Количество подъездов") == true)
-                    {GKHParse.GKHPodezdi = allText_text[i];}
+                    { GKHParse.GKHPodezdi = allText_text[i]; }
                     else if (allText_elem[i].Contains("Наибольшее количество этажей") == true)
-                    {GKHParse.GKHEtajiMax = allText_text[i];}
+                    { GKHParse.GKHEtajiMax = allText_text[i]; }
                     else if (allText_elem[i].Contains("Наименьшее количество этажей") == true)
-                    {GKHParse.GKHEtajiMin = allText_text[i];}
+                    { GKHParse.GKHEtajiMin = allText_text[i]; }
                     else if (allText_elem[i].Contains("Площадь жилых помещений") == true)
-                    {GKHParse.GKHJilayaPloshad = allText_text[i];}
+                    { GKHParse.GKHJilayaPloshad = allText_text[i]; }
                     //////////////////////////////////////////////////
                     else if (allText_elem[i].Contains("Площадь нежилых помещений") == true)
-                    {GKHParse.GKHNeJilayaPloshad = allText_text[i];}
+                    { GKHParse.GKHNeJilayaPloshad = allText_text[i]; }
                     else if (allText_elem[i].Contains("Площадь помещений общего имущества") == true)
-                    {GKHParse.GKHPloshadPomesh = allText_text[i];}
+                    { GKHParse.GKHPloshadPomesh = allText_text[i]; }
                     else if (allText_elem[i].Contains("Площадь зем. участка общего имущества") == true)
-                    {GKHParse.GKHZemlyaPloshad = allText_text[i];}
+                    { GKHParse.GKHZemlyaPloshad = allText_text[i]; }
                     else if (allText_elem[i].Contains("Площадь парковки") == true)
-                    {GKHParse.GKHParkovkaPloshad = allText_text[i];}
+                    { GKHParse.GKHParkovkaPloshad = allText_text[i]; }
                     else if (allText_elem[i].Contains("Формирование фонда кап. ремонта") == true)
-                    {GKHParse.GKHFondKapRemonta = allText_text[i];}
-                }catch{}}
+                    { GKHParse.GKHFondKapRemonta = allText_text[i]; }
+                }
+                catch { }
+            }
 
             browser.Quit();
             label90.Visible = true;
@@ -497,9 +497,9 @@ namespace graduatework.Forms
             label2.Text = GKHParse.GKHTipPerekritiy;
             textBox10.Text = GKHParse.GKHGodPostroiki;
 
-                label27.Text = "Площадь парковки, м2: ";
-                label27.Text += GKHParse.GKHParkovkaPloshad;
-            
+            label27.Text = "Площадь парковки, м2: ";
+            label27.Text += GKHParse.GKHParkovkaPloshad;
+
             label78.Text = GKHParse.GKHDetskayaPloshadka;
             textBox14.Text = GKHParse.GKHDopInfa;
             textBox12.Text = (Convert.ToInt32(DateTime.Now.Year) - Convert.ToInt32(GKHParse.GKHGodPostroiki)).ToString();
@@ -517,7 +517,7 @@ namespace graduatework.Forms
                 int c = a - b;
                 textBox12.Text = c.ToString();
             }
-        else if (textBox10.Text == "")
+            else if (textBox10.Text == "")
             {
                 textBox12.Text = "";
             }
@@ -684,61 +684,61 @@ namespace graduatework.Forms
                     try
                     {
                         queriesTableAdapter1.ИндентификацияИХаркаМестополженияОбъекта_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.IIXMO[1]), Convert.ToInt32(SelectBanking.IIXMO[2]), Convert.ToInt32(SelectBanking.IIXMO[3]), Convert.ToInt32(SelectBanking.IIXMO[4]), Convert.ToInt32(SelectBanking.IIXMO[5]), Convert.ToInt32(SelectBanking.IIXMO[8]), Convert.ToInt32(SelectBanking.IIXMO[7]), SelectBanking.IIXMO[6], SelectBanking.IIXMO[9], Convert.ToInt32(SelectBanking.IIXMO[0]));
-                }
+                    }
                     catch { }
-                try
-                {
-                    ////Общая характеристика здания
-                    queriesTableAdapter1.ОбщаяХаркаЗдания_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.OXZ[1]), Convert.ToInt32(SelectBanking.OXZ[2]), Convert.ToInt32(SelectBanking.OXZ[3]), Convert.ToInt32(SelectBanking.OXZ[4]), Convert.ToInt32(SelectBanking.OXZ[5]), Convert.ToInt32(SelectBanking.OXZ[6]), Convert.ToInt32(SelectBanking.OXZ[7]), Convert.ToInt32(SelectBanking.OXZ[9]), Convert.ToInt32(SelectBanking.OXZ[10]), Convert.ToInt32(SelectBanking.OXZ[11]), Convert.ToInt32(SelectBanking.OXZ[12]), Convert.ToInt32(SelectBanking.OXZ[13]), Convert.ToInt32(SelectBanking.OXZ[14]), Convert.ToInt32(SelectBanking.OXZ[15]), Convert.ToInt32(SelectBanking.OXZ[16]), Convert.ToInt32(SelectBanking.OXZ[17]), SelectBanking.OXZ[8], SelectBanking.OXZ[18], Convert.ToInt32(SelectBanking.OXZ[0]));
-                }
+                    try
+                    {
+                        ////Общая характеристика здания
+                        queriesTableAdapter1.ОбщаяХаркаЗдания_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.OXZ[1]), Convert.ToInt32(SelectBanking.OXZ[2]), Convert.ToInt32(SelectBanking.OXZ[3]), Convert.ToInt32(SelectBanking.OXZ[4]), Convert.ToInt32(SelectBanking.OXZ[5]), Convert.ToInt32(SelectBanking.OXZ[6]), Convert.ToInt32(SelectBanking.OXZ[7]), Convert.ToInt32(SelectBanking.OXZ[9]), Convert.ToInt32(SelectBanking.OXZ[10]), Convert.ToInt32(SelectBanking.OXZ[11]), Convert.ToInt32(SelectBanking.OXZ[12]), Convert.ToInt32(SelectBanking.OXZ[13]), Convert.ToInt32(SelectBanking.OXZ[14]), Convert.ToInt32(SelectBanking.OXZ[15]), Convert.ToInt32(SelectBanking.OXZ[16]), Convert.ToInt32(SelectBanking.OXZ[17]), SelectBanking.OXZ[8], SelectBanking.OXZ[18], Convert.ToInt32(SelectBanking.OXZ[0]));
+                    }
                     catch { }
-                try
-                {
-                    ////Характеристика объекта оценки
-                    queriesTableAdapter1.ХаркаОбъектаОценки_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[1]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[2]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[3]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[4]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[5]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[6]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[7]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[8]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[9]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[10]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[11]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[12]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[13]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[14]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[15]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[16]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[17]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[18]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[19]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[0]));
-                }
+                    try
+                    {
+                        ////Характеристика объекта оценки
+                        queriesTableAdapter1.ХаркаОбъектаОценки_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[1]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[2]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[3]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[4]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[5]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[6]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[7]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[8]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[9]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[10]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[11]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[12]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[13]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[14]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[15]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[16]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[17]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[18]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[19]), Convert.ToInt32(SelectBanking.HarkaObjectaOtsenki[0]));
+                    }
                     catch { }
-                try
-                {
-                    ////Инженерное обеспечение
-                    queriesTableAdapter1.ИнженерноеОбеспечение_ИЗМЕНИТЬ(SelectBanking.InjenernoeObesp[1], SelectBanking.InjenernoeObesp[2], SelectBanking.InjenernoeObesp[3], SelectBanking.InjenernoeObesp[4], SelectBanking.InjenernoeObesp[5], SelectBanking.InjenernoeObesp[6], SelectBanking.InjenernoeObesp[7], SelectBanking.InjenernoeObesp[8], SelectBanking.InjenernoeObesp[9], SelectBanking.InjenernoeObesp[10], Convert.ToInt32(SelectBanking.InjenernoeObesp[0]));
-                }
+                    try
+                    {
+                        ////Инженерное обеспечение
+                        queriesTableAdapter1.ИнженерноеОбеспечение_ИЗМЕНИТЬ(SelectBanking.InjenernoeObesp[1], SelectBanking.InjenernoeObesp[2], SelectBanking.InjenernoeObesp[3], SelectBanking.InjenernoeObesp[4], SelectBanking.InjenernoeObesp[5], SelectBanking.InjenernoeObesp[6], SelectBanking.InjenernoeObesp[7], SelectBanking.InjenernoeObesp[8], SelectBanking.InjenernoeObesp[9], SelectBanking.InjenernoeObesp[10], Convert.ToInt32(SelectBanking.InjenernoeObesp[0]));
+                    }
                     catch { }
-                try
-                {
-                    ////Отделка
-                    queriesTableAdapter1.Отделка_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.Otdelka[1]), Convert.ToInt32(SelectBanking.Otdelka[2]), Convert.ToInt32(SelectBanking.Otdelka[3]), Convert.ToInt32(SelectBanking.Otdelka[4]), Convert.ToInt32(SelectBanking.Otdelka[5]), Convert.ToInt32(SelectBanking.Otdelka[6]), Convert.ToInt32(SelectBanking.Otdelka[0]));
-                }
+                    try
+                    {
+                        ////Отделка
+                        queriesTableAdapter1.Отделка_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.Otdelka[1]), Convert.ToInt32(SelectBanking.Otdelka[2]), Convert.ToInt32(SelectBanking.Otdelka[3]), Convert.ToInt32(SelectBanking.Otdelka[4]), Convert.ToInt32(SelectBanking.Otdelka[5]), Convert.ToInt32(SelectBanking.Otdelka[6]), Convert.ToInt32(SelectBanking.Otdelka[0]));
+                    }
                     catch { }
-                try
-                {
-                    ////Комнаты
-                    queriesTableAdapter1.Комнаты_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.Komnati[1]), Convert.ToInt32(SelectBanking.Komnati[2]), Convert.ToInt32(SelectBanking.Komnati[3]), Convert.ToInt32(SelectBanking.Komnati[4]), Convert.ToInt32(SelectBanking.Komnati[0]));
-                }
+                    try
+                    {
+                        ////Комнаты
+                        queriesTableAdapter1.Комнаты_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.Komnati[1]), Convert.ToInt32(SelectBanking.Komnati[2]), Convert.ToInt32(SelectBanking.Komnati[3]), Convert.ToInt32(SelectBanking.Komnati[4]), Convert.ToInt32(SelectBanking.Komnati[0]));
+                    }
                     catch { }
-                try
-                {
-                    ////Кухня
-                    queriesTableAdapter1.Кухня_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.Kuhnya[1]), Convert.ToInt32(SelectBanking.Kuhnya[2]), Convert.ToInt32(SelectBanking.Kuhnya[3]), Convert.ToInt32(SelectBanking.Kuhnya[4]), Convert.ToInt32(SelectBanking.Kuhnya[0]));
-                }
+                    try
+                    {
+                        ////Кухня
+                        queriesTableAdapter1.Кухня_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.Kuhnya[1]), Convert.ToInt32(SelectBanking.Kuhnya[2]), Convert.ToInt32(SelectBanking.Kuhnya[3]), Convert.ToInt32(SelectBanking.Kuhnya[4]), Convert.ToInt32(SelectBanking.Kuhnya[0]));
+                    }
                     catch { }
-                try
-                {
-                    ////Санузлы
-                    queriesTableAdapter1.Санузлы_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.Sanuzli[1]), Convert.ToInt32(SelectBanking.Sanuzli[2]), Convert.ToInt32(SelectBanking.Sanuzli[3]), Convert.ToInt32(SelectBanking.Sanuzli[4]), Convert.ToInt32(SelectBanking.Sanuzli[0]));
-                }
+                    try
+                    {
+                        ////Санузлы
+                        queriesTableAdapter1.Санузлы_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.Sanuzli[1]), Convert.ToInt32(SelectBanking.Sanuzli[2]), Convert.ToInt32(SelectBanking.Sanuzli[3]), Convert.ToInt32(SelectBanking.Sanuzli[4]), Convert.ToInt32(SelectBanking.Sanuzli[0]));
+                    }
                     catch { }
-                try
-                {
-                    ////Иные
-                    queriesTableAdapter1.Иные_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.Inie[1]), Convert.ToInt32(SelectBanking.Inie[2]), Convert.ToInt32(SelectBanking.Inie[3]), Convert.ToInt32(SelectBanking.Inie[4]), Convert.ToInt32(SelectBanking.Inie[0]));
-                }
+                    try
+                    {
+                        ////Иные
+                        queriesTableAdapter1.Иные_ИЗМЕНИТЬ(Convert.ToInt32(SelectBanking.Inie[1]), Convert.ToInt32(SelectBanking.Inie[2]), Convert.ToInt32(SelectBanking.Inie[3]), Convert.ToInt32(SelectBanking.Inie[4]), Convert.ToInt32(SelectBanking.Inie[0]));
+                    }
                     catch { }
-                try
-                {
-                    ////ЭКСПЕРТАНЯ ОЦЕНКА
-                    queriesTableAdapter1.ЭкспертнаяОценкаТехСостояния_ИЗМЕНИТЬ(SelectBanking.EOTS[1], SelectBanking.EOTS[2], SelectBanking.EOTS[3], SelectBanking.EOTS[4], SelectBanking.EOTS[5], SelectBanking.EOTS[6], SelectBanking.EOTS[7], SelectBanking.EOTS[8], SelectBanking.EOTS[9], SelectBanking.EOTS[10], SelectBanking.EOTS[11], SelectBanking.EOTS[12], SelectBanking.EOTS[13], SelectBanking.EOTS[14], SelectBanking.EOTS[15], SelectBanking.EOTS[16], SelectBanking.EOTS[17], Convert.ToInt32(SelectBanking.EOTS[0]));
-                }
+                    try
+                    {
+                        ////ЭКСПЕРТАНЯ ОЦЕНКА
+                        queriesTableAdapter1.ЭкспертнаяОценкаТехСостояния_ИЗМЕНИТЬ(SelectBanking.EOTS[1], SelectBanking.EOTS[2], SelectBanking.EOTS[3], SelectBanking.EOTS[4], SelectBanking.EOTS[5], SelectBanking.EOTS[6], SelectBanking.EOTS[7], SelectBanking.EOTS[8], SelectBanking.EOTS[9], SelectBanking.EOTS[10], SelectBanking.EOTS[11], SelectBanking.EOTS[12], SelectBanking.EOTS[13], SelectBanking.EOTS[14], SelectBanking.EOTS[15], SelectBanking.EOTS[16], SelectBanking.EOTS[17], Convert.ToInt32(SelectBanking.EOTS[0]));
+                    }
                     catch { }
 
                 }
@@ -757,5 +757,5 @@ namespace graduatework.Forms
                 e.Handled = true;
         }
     }
-    }
+}
 
